@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Sigmar+One&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 /*HTML , BODY : Structrure Base*/
 html,body{
     margin:0px;
@@ -31,11 +32,10 @@ body *.hidden{
     font-size:65px;
     color:white;
 }
-/*Test*/
-.ER{
-    color:black;
-}
 
+.pokemonCard{
+    font-family:"Pokemon Solid", cursive;
+}
 /*ID Title*/
 #title {
     cursor: pointer;
@@ -46,20 +46,35 @@ body *.hidden{
     transform:scale(1.25);
     transition: 1s;
 }
+/*Régulateur image type pokemon*/
+
+.PokemonType{
+    width:15px !important;
+    height:15px !important;
+}
 
 /*Dracaufeu*/
+.Dracaufeu{
+    color:#e98846;
+}
 #Dracaufeu:hover{
     transform:scale(0.75);
     transition:1s;
 }
 
 /*Pikachu*/
+.Pikachu{
+    color:#f8d326;
+}
 #Pikachu:hover{
     transform:scale(0.75);
     transition:1s
 }
 
 /*Florizarre*/
+.Florizarre{
+    color:#82a946;
+}
 #Florizarre:hover{
     transform:scale(0.75);
     transition:1s
