@@ -7,9 +7,28 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <img id="startPicture"src="IMG/LOGO/rect80047.png" class="img">
+        <img id="startPicture"src="IMG/LOGO/rect80047.png" class="img" title="LOL">
         <h1 id="title" class="launcher-font">Lancer la Partie!</h1>
-        <div id="startingMenu" class="ER hidden">
+
+        <div id="lifebardiv" class="menu Life-Bar hidden">
+            <table>
+                <tr>
+                    <td><h1 id="lifebar" class="launcher-font Life-Bar"><span id="lifepoints"></span></h1></td>
+                    <td><h1 id="potions" class="Potions Life-Bar"><span id="potions"></span></h1></td>
+                    <td><h1 id="ennemy_pv" class="ennemmy-pv Life-Bar"><span id="ennemy_pv"></span></h1></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="IMG/POKEMON/Buttons/Attack_Button.png" title="Attaquer" id="lowlife" class="img">
+                    </td>
+                    <td>
+                        <img src="IMG/POKEMON/Buttons/Healer-Button.png" title="Régénérer la santé" id="healer" class="img">
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="startingMenu" class="menu character-choice hidden">
             <h1 class="pokemonCard">Cliquez sur le pokémon que vous souhaitez incarner :</h1>
             <table>
                 <tr>
@@ -45,6 +64,14 @@
                 </tr>
             </table>
         </div>
-        <script src="app.js"></script>
+        <div class="combat-fight hidden">
+            <img id="ennemy1" src="IMG/POKEMON/Backgrounds/Background_Commands_Ennemy1.png" class="fight hidden">
+            <img id="ennemy2" src="IMG/POKEMON/Backgrounds/Background_Commands_Ennemy2.png" class="fight hidden">
+            <img id="ennemy3" src="IMG/POKEMON/Backgrounds/Background_Commands_Ennemy3.png" class="fight hidden">
+            <img id="ennemy1_hit" src="IMG/POKEMON/Backgrounds/Background_Commands_Hitted_Ennemy1.png" class="fight hidden">
+            <img id="ennemy2_hit" src="IMG/POKEMON/Backgrounds/Background_Commands_Hitted_Ennemy2.png" class="fight hidden">
+            <img id="ennemy3_hit" src="IMG/POKEMON/Backgrounds/Background_Commands_Hitted_Ennemy3.png" class="fight hidden">
+        </div>    
+        <script src="app.js" type="text/javascript"></script>
     </body>
 </html>
