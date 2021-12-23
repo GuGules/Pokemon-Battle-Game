@@ -24,10 +24,6 @@ body *.hidden{
     transition: 0.25s;
 }
 /*Régulateur de la taille d'image*/
-.img{
-    size: 100%;
-    z-index: 1;
-}
 /*Polices*/
 .launcher-font{
     font-family:"Sigmar One",cursive;
@@ -38,31 +34,55 @@ body *.hidden{
 .pokemonCard{
     font-family:"Pokemon Solid",cursive;
 }
+/*Superposition*/
+
+.super-position{
+    z-index:3;
+}
 
 /*Divisions de la page*/
 .menu{
     position: absolute;
 }
 
+.infos{
+    z-index:7 !important;;
+    position:absolute;
+    left:471px;
+}
 .fight{
     position: absolute;
-    z-index:4
+    z-index:0;
 }
 
-.Life-Bar{
-    color:darkred;
+.Lifepts{
+    font-family:"Sigmar One",cursive;
+    font-size:50px;
+    z-index:8!important;
+    position: absolute;
+    color:#001970;
+    left:-363px;
+    bottom:115px;
 }
 
 .Potions{
     font-family:"Sigmar One",cursive;
-    font-size:15px;
-    color: #388e3c;
+    font-size:50px;
+    color: #ab47bc;
+    position: absolute;
+    left:-330px;
+    bottom:-50px;
+    z-index: 8 !important;
 }
 
 .ennemy-pv{
     font-family:"Sigmar One",cursive;
-    font-size:15px;
-    color: blue;
+    font-size:50px;
+    position: absolute;
+    color: #b0ff57;
+    left:-363px;
+    bottom: -240px;
+    z-index: 8 !important;
 }
 /*ID Title*/
 #title {
@@ -75,6 +95,14 @@ body *.hidden{
     transition: 1s;
 }
 /*Attack Button ID*/
+
+.lowlife{
+    position: relative;
+    bottom: -240px;
+    left:-125px;
+    z-index: 10 !important;
+}
+
 #lowlife{
     cursor: pointer;
 }
@@ -84,6 +112,14 @@ body *.hidden{
     transition: 0.25s
 }
 /*Heal Button ID*/
+
+.healer{
+    position: relative;
+    bottom: -240px;
+    left:0px;
+    z-index: 10 !important;
+}
+
 #healer{
     cursor: pointer;
 }
@@ -92,6 +128,27 @@ body *.hidden{
     transform: scale(0.5);
     transition: 0.25s;
 }
+
+/*Exit Button ID*/
+
+.exit{
+    width:50px !important;
+    height: 50px !important;
+    position: relative;
+    bottom: -240px;
+    left:125px;
+    z-index: 10 !important;
+}
+
+#endgame{
+    cursor: pointer;
+}
+
+#endgame:hover{
+    transform: scale(0.5);
+    transition: 0.25s;
+}
+
 /*Régulateur image type pokemon*/
 
 .PokemonType{
@@ -122,6 +179,30 @@ body *.hidden{
     color:#82a946;
 }
 #Florizarre:hover{
+    transform:scale(0.75);
+    transition:1s
+}
+
+/*Fin de jeu*/
+.end-lose{
+    position: absolute;
+    bottom: 300px !important;
+}
+
+.end{
+    position:absolute;
+    color: black;
+    font-family:"Pokemon Solid",cursive;
+    font-size: 50px;
+    z-index:9;
+    bottom:90px;
+}
+
+#Restart{
+    cursor:pointer;
+}
+
+#Restart:hover{
     transform:scale(0.75);
     transition:1s
 }
