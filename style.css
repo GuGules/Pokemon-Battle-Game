@@ -61,7 +61,7 @@ body *.hidden{
     z-index:8!important;
     position: absolute;
     color:#001970;
-    left:-343px;
+    left:-333px;
     bottom:115px;
 }
 
@@ -70,7 +70,7 @@ body *.hidden{
     font-size:50px;
     color: #ab47bc;
     position: absolute;
-    left:-310px;
+    left:-300px;
     bottom:-50px;
     z-index: 8 !important;
 }
@@ -80,7 +80,7 @@ body *.hidden{
     font-size:50px;
     position: absolute;
     color: #b0ff57;
-    left:-343px;
+    left:-333px;
     bottom: -240px;
     z-index: 8 !important;
 }
