@@ -77,7 +77,7 @@ choix_Florizarre.addEventListener("click",()=>{
 })
 
 /*Fonctions de jeu*/
-function degats(){
+function degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max)){
     alert("*hit*")
     attaque=randInt(1,(attaque_max/2))
     ennemy_pv=ennemy_pv-attaque
@@ -125,33 +125,6 @@ function ennemy_spawn(a,b,c){
         var ennemy_attack=90
     }
     jeu(a,b,c,ennemy_pv,ennemy_attack)
-}
-
-function effect(ennemy){
-    if(ennemy==1){
-        ennemy1.classList.add("hidden")
-        ennemy1effect.classList.remove("hidden")
-        ennemy1effect.classList.add("super-position")
-        sleep(1000)
-        ennemy1effect.classList.remove("super-position")
-        ennemy1effect.classList.add("hidden")
-        ennemy1.classList.remove("hidden")
-    }else if(ennemy==2){
-        ennemy2.classList.add("hidden")
-        ennemy2effect.classList.remove("hidden")
-        ennemy2effect.classList.add("super-position")
-        sleep(1000)
-        ennemy2effect.classList.remove("super-position")
-        ennemy2effect.classList.add("hidden")
-        ennemy2.classList.remove("hidden")
-    }else if(ennemy==3){
-        ennemy3.classList.add("hidden")
-        ennemy3effect.classList.remove("hidden")
-        ennemy3effect.classList.add("super-position")
-        ennemy3effect.classList.remove("super-position")
-        ennemy3effect.classList.add("hidden")
-        ennemy3.classList.remove("hidden")
-    }
 }
 
 function backtomain(){
@@ -206,7 +179,7 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
     document.getElementById("lifepoints").innerHTML=lifepts;
     document.getElementById("potions").innerHTML=potions;
-    degats.addEventListener("click",degats())
+    degats.addEventListener("click",degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max))
     healer.addEventListener("click",()=>{
         if (potions>0){
             if (lifepts+13>initial_lifepts){
@@ -243,12 +216,4 @@ function randInt(a,b){
     var max=b;  
     var random = Math.floor(Math.random()*(max - min))+min; 
     return random
-}
-
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
 }
