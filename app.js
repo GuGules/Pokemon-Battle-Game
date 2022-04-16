@@ -75,6 +75,37 @@ choix_Florizarre.addEventListener("click",()=>{
     var ennemy=randInt(1,3)
     ennemy_spawn(ennemy,attaque,lifepoints)
 })
+
+/*Fonctions de jeu*/
+function degats(){
+    alert("*hit*")
+    attaque=randInt(1,(attaque_max/2))
+    ennemy_pv=ennemy_pv-attaque
+    if(ennemy_pv>15){
+        document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
+    }else if (0<ennemy_pv && ennemy_pv<15){
+        document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
+    }else if(ennemy_pv<0 || ennemy_pv==0){
+        ennemy_pv=0;
+        document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
+        alert("Vous avez tué l'adversaire");
+    }
+    if(ennemy_pv>0 && ennemy_pv!=0){
+        ennemy_attack=randInt(1,ennemy_attack_max)
+        lifepts=lifepts-ennemy_attack
+        alert("Vous avez été touché par l'ennemi!!!");
+        document.getElementById("lifepoints").innerHTML=lifepts;
+    }
+    if(lifepts==0 || lifepts<0){
+        showLose()
+    }
+    if(ennemy_pv==0 || ennemy_pv<0){
+        showWin()
+    }
+}
+
+
+
 /*Fonction Passerelle*/
 function ennemy_spawn(a,b,c){
     if(a==1){
@@ -175,33 +206,7 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
     document.getElementById("lifepoints").innerHTML=lifepts;
     document.getElementById("potions").innerHTML=potions;
-    degats.addEventListener("click",()=>{
-        alert("*hit*")
-        attaque=randInt(1,(attaque_max/2))
-        ennemy_pv=ennemy_pv-attaque
-        if(ennemy_pv>15){
-            document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
-        }else if (0<ennemy_pv && ennemy_pv<15){
-            document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
-        }else if(ennemy_pv<0 || ennemy_pv==0){
-            ennemy_pv=0;
-            document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
-            alert("Vous avez tué l'adversaire");
-        }
-        if(ennemy_pv>0 && ennemy_pv!=0){
-            ennemy_attack=randInt(1,ennemy_attack_max)
-            lifepts=lifepts-ennemy_attack
-            alert("Vous avez été touché par l'ennemi!!!");
-            document.getElementById("lifepoints").innerHTML=lifepts;
-            }
-        if(lifepts==0 || lifepts<0){
-            showLose()
-        }
-        if(ennemy_pv==0 || ennemy_pv<0){
-            showWin()
-        }
-
-    })
+    degats.addEventListener("click",degats())
     healer.addEventListener("click",()=>{
         if (potions>0){
             if (lifepts+13>initial_lifepts){
