@@ -228,9 +228,7 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
         document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
         document.getElementById("potions").innerHTML=potions;
     })
-    endgame.addEventListener("click",()=>{
-        showLose()
-    })
+    endgame.addEventListener("click",showLose())
 }
 
 
