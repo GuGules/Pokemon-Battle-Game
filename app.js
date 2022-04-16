@@ -77,7 +77,7 @@ choix_Florizarre.addEventListener("click",()=>{
 })
 
 /*Fonctions de jeu*/
-function degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max)){
+function degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     alert("*hit*")
     attaque=randInt(1,(attaque_max/2))
     ennemy_pv=ennemy_pv-attaque
