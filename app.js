@@ -77,7 +77,7 @@ choix_Florizarre.addEventListener("click",()=>{
 })
 
 /*Fonctions de jeu*/
-function degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
+function func_degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     alert("*hit*")
     attaque=randInt(1,(attaque_max/2))
     ennemy_pv=ennemy_pv-attaque
@@ -179,7 +179,7 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
     document.getElementById("lifepoints").innerHTML=lifepts;
     document.getElementById("potions").innerHTML=potions;
-    degats.addEventListener("click",degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max))
+    degats.addEventListener("click",func_degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max))
     healer.addEventListener("click",()=>{
         if (potions>0){
             if (lifepts+13>initial_lifepts){
