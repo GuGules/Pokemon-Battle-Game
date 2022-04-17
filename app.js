@@ -65,7 +65,7 @@ choix_Dracaufeu.addEventListener("click",()=>{
     lifepoints=160;
     attaque=130;
     ennemy=randInt(1,3)
-    ennemy_spawn()});
+    ennemy_spawn(ennemy)})
 
 choix_Pikachu.addEventListener("click",()=>{
     HideStartingMenu()
@@ -73,7 +73,7 @@ choix_Pikachu.addEventListener("click",()=>{
     attaque=30;
     lifepoints=130;
     ennemy=randInt(1,3)
-    ennemy_spawn()});
+    ennemy_spawn(ennemy)})
 
 choix_Florizarre.addEventListener("click",()=>{
     HideStartingMenu()
@@ -81,7 +81,8 @@ choix_Florizarre.addEventListener("click",()=>{
     attaque=90;
     lifepoints=160;
     ennemy=randInt(1,3)
-    ennemy_spawn()});
+    ennemy_spawn(ennemy)
+})
 
 /*Fonctions de jeu*/
 function funcdegats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
@@ -114,7 +115,7 @@ function funcdegats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
 
 
 /*Fonction Passerelle*/
-function ennemy_spawn(a,b,c){
+function ennemy_spawn(a){
     if(a==1){
         ennemy1.classList.remove("hidden");
         infos.classList.remove("hidden");
