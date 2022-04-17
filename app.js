@@ -65,7 +65,7 @@ choix_Dracaufeu.addEventListener("click",()=>{
     lifepoints=160;
     attaque=130;
     ennemy=randInt(1,3)
-    ennemy_spawn(ennemy,attaque,lifepoints)})
+    ennemy_spawn()});
 
 choix_Pikachu.addEventListener("click",()=>{
     HideStartingMenu()
@@ -73,8 +73,7 @@ choix_Pikachu.addEventListener("click",()=>{
     attaque=30;
     lifepoints=130;
     ennemy=randInt(1,3)
-    ennemy_spawn(ennemy,attaque,lifepoints)
-})
+    ennemy_spawn()});
 
 choix_Florizarre.addEventListener("click",()=>{
     HideStartingMenu()
@@ -82,8 +81,7 @@ choix_Florizarre.addEventListener("click",()=>{
     attaque=90;
     lifepoints=160;
     ennemy=randInt(1,3)
-    ennemy_spawn(ennemy,attaque,lifepoints)
-})
+    ennemy_spawn()});
 
 /*Fonctions de jeu*/
 function funcdegats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
@@ -179,7 +177,7 @@ function showWin(){
     restart.addEventListener("click",()=>{
         backtomain2()
     })
-}
+};
 
 function jeu(attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     initial_lifepts=lifepts
