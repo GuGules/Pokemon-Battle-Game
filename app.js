@@ -203,7 +203,6 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     endgame.addEventListener("click",showLose())
 }
 
-
 /* Autres Fonctions */
 function randInt(a,b){
     var min=a; 
