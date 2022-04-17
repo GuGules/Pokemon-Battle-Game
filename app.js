@@ -1,29 +1,38 @@
 /*Importation des menus*/
-let startPicture=document.querySelector("#startPicture")
-let startMenu=document.querySelector("#title")
-let startingMenu=document.querySelector("#startingMenu")
+let startPicture=document.querySelector("#startPicture");
+let startMenu=document.querySelector("#title");
+let startingMenu=document.querySelector("#startingMenu");
 /*Importation des pokemons pour les choix*/
-let choix_Dracaufeu=document.querySelector("#Dracaufeu")
-let choix_Pikachu=document.querySelector("#Pikachu")
-let choix_Florizarre=document.querySelector("#Florizarre")
+let choix_Dracaufeu=document.querySelector("#Dracaufeu");
+let choix_Pikachu=document.querySelector("#Pikachu");
+let choix_Florizarre=document.querySelector("#Florizarre");
 /*Importation des pokemons pour les corps ennemies*/
-let ennemy1=document.querySelector("#ennemy1")
-let ennemy2=document.querySelector("#ennemy2")
-let ennemy3=document.querySelector("#ennemy3")
-let ennemy1effect=document.querySelector("#ennemy1_hit")
-let ennemy2effect=document.querySelector("#ennemy2_hit")
-let ennemy3effect=document.querySelector("#ennemy3_hit")
+let ennemy1=document.querySelector("#ennemy1");
+let ennemy2=document.querySelector("#ennemy2");
+let ennemy3=document.querySelector("#ennemy3");
+let ennemy1effect=document.querySelector("#ennemy1_hit");
+let ennemy2effect=document.querySelector("#ennemy2_hit");
+let ennemy3effect=document.querySelector("#ennemy3_hit");
 /*Boutons*/
-let healer=document.querySelector("#healer")
-let endgame=document.querySelector("#endgame")
-let degats=document.querySelector("#lowlife")
+let healer=document.querySelector("#healer");
+let endgame=document.querySelector("#endgame");
+let degats=document.querySelector("#lowlife");
 /*Autres Importations*/
-let lifebar=document.querySelector("#lifebardiv")
-let fightbackground=document.querySelector("BGFight")
-let restart=document.querySelector("#Restart")
-let lose=document.querySelector("#Lose")
-let win=document.querySelector("#Win")
-let infos=document.querySelector("#infos")
+let lifebar=document.querySelector("#lifebardiv");
+let fightbackground=document.querySelector("BGFight");
+let restart=document.querySelector("#Restart");
+let lose=document.querySelector("#Lose");
+let win=document.querySelector("#Win");
+let infos=document.querySelector("#infos");
+/*Variables*/
+var lifepoints=0;
+var attaque=0;
+var lifepoints=0;
+var ennemy_pv=0;
+var ennemy_attack=0;
+var potions=0;
+var initial_lifepts=0;
+
 
 function HideMenu(){
     startMenu.classList.add("hidden");
@@ -53,26 +62,26 @@ startMenu.addEventListener("click",()=>{
 choix_Dracaufeu.addEventListener("click",()=>{
     HideStartingMenu()
     ShowFlap()
-    var lifepoints=160;
-    var attaque=130;
-    var ennemy=randInt(1,3)
+    lifepoints=160;
+    attaque=130;
+    ennemy=randInt(1,3)
     ennemy_spawn(ennemy,attaque,lifepoints)})
 
 choix_Pikachu.addEventListener("click",()=>{
     HideStartingMenu()
     ShowFlap()
-    var attaque=30;
-    var lifepoints=130;
-    var ennemy=randInt(1,3)
+    attaque=30;
+    lifepoints=130;
+    ennemy=randInt(1,3)
     ennemy_spawn(ennemy,attaque,lifepoints)
 })
 
 choix_Florizarre.addEventListener("click",()=>{
     HideStartingMenu()
     ShowFlap()
-    var attaque=90;
-    var lifepoints=160;
-    var ennemy=randInt(1,3)
+    attaque=90;
+    lifepoints=160;
+    ennemy=randInt(1,3)
     ennemy_spawn(ennemy,attaque,lifepoints)
 })
 
@@ -109,22 +118,22 @@ function funcdegats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
 /*Fonction Passerelle*/
 function ennemy_spawn(a,b,c){
     if(a==1){
-        ennemy1.classList.remove("hidden")
-        infos.classList.remove("hidden")
-        var ennemy_pv=160
-        var ennemy_attack=160
+        ennemy1.classList.remove("hidden");
+        infos.classList.remove("hidden");
+        ennemy_pv=160;
+        ennemy_attack=160;
     }else if(a==2){
-        ennemy2.classList.remove("hidden")
-        infos.classList.remove("hidden")
-        var ennemy_pv=160
-        var ennemy_attack=130
+        ennemy2.classList.remove("hidden");
+        infos.classList.remove("hidden");
+        ennemy_pv=160;
+        ennemy_attack=130;
     }else if(a==3){
-        ennemy3.classList.remove("hidden")
-        infos.classList.remove("hidden")
-        var ennemy_pv=160
-        var ennemy_attack=90
+        ennemy3.classList.remove("hidden");
+        infos.classList.remove("hidden");
+        ennemy_pv=160;
+        ennemy_attack=90;
     }
-    jeu(a,b,c,ennemy_pv,ennemy_attack)
+    jeu(b,c,ennemy_pv,ennemy_attack)
 }
 
 function backtomain(){
@@ -172,14 +181,14 @@ function showWin(){
     })
 }
 
-function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
-    var initial_lifepts=lifepts
-    var potions=5
-    lifebardiv.classList.remove("hidden")
+function jeu(attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
+    initial_lifepts=lifepts
+    potions=5
+    lifebardiv.classList.remove("hidden");
     document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
     document.getElementById("lifepoints").innerHTML=lifepts;
     document.getElementById("potions").innerHTML=potions;
-    degats.addEventListener("click",func_degats(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max))
+    degats.addEventListener("click",funcdegats());
     healer.addEventListener("click",()=>{
         if (potions>0){
             if (lifepts+13>initial_lifepts){
