@@ -1,29 +1,29 @@
 /*Importation des menus*/
-let startPicture=document.querySelector("#startPicture")
-let startMenu=document.querySelector("#title")
-let startingMenu=document.querySelector("#startingMenu")
+let startPicture=document.querySelector("#startPicture");
+let startMenu=document.querySelector("#title");
+let startingMenu=document.querySelector("#startingMenu");
 /*Importation des pokemons pour les choix*/
-let choix_Dracaufeu=document.querySelector("#Dracaufeu")
-let choix_Pikachu=document.querySelector("#Pikachu")
-let choix_Florizarre=document.querySelector("#Florizarre")
+let choix_Dracaufeu=document.querySelector("#Dracaufeu");
+let choix_Pikachu=document.querySelector("#Pikachu");
+let choix_Florizarre=document.querySelector("#Florizarre");
 /*Importation des pokemons pour les corps ennemies*/
-let ennemy1=document.querySelector("#ennemy1")
-let ennemy2=document.querySelector("#ennemy2")
-let ennemy3=document.querySelector("#ennemy3")
-let ennemy1effect=document.querySelector("#ennemy1_hit")
-let ennemy2effect=document.querySelector("#ennemy2_hit")
-let ennemy3effect=document.querySelector("#ennemy3_hit")
+let ennemy1=document.querySelector("#ennemy1");
+let ennemy2=document.querySelector("#ennemy2");
+let ennemy3=document.querySelector("#ennemy3");
+let ennemy1effect=document.querySelector("#ennemy1_hit");
+let ennemy2effect=document.querySelector("#ennemy2_hit");
+let ennemy3effect=document.querySelector("#ennemy3_hit");
 /*Boutons*/
-let healer=document.querySelector("#healer")
-let endgame=document.querySelector("#endgame")
-let degats=document.querySelector("#lowlife")
+let healer=document.querySelector("#healer");
+let endgame=document.querySelector("#endgame");
+let degats=document.querySelector("#lowlife");
 /*Autres Importations*/
-let lifebar=document.querySelector("#lifebardiv")
-let fightbackground=document.querySelector("BGFight")
-let restart=document.querySelector("#Restart")
-let lose=document.querySelector("#Lose")
-let win=document.querySelector("#Win")
-let infos=document.querySelector("#infos")
+let lifebar=document.querySelector("#lifebardiv");
+let fightbackground=document.querySelector("BGFight");
+let restart=document.querySelector("#Restart");
+let lose=document.querySelector("#Lose");
+let win=document.querySelector("#Win");
+let infos=document.querySelector("#infos");
 
 function HideMenu(){
     startMenu.classList.add("hidden");
@@ -142,9 +142,9 @@ function showWin(){
 }
 
 function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
-    var initial_lifepts=lifepts
-    var potions=5
-    lifebardiv.classList.remove("hidden")
+    var initial_lifepts=lifepts;
+    var potions=5;
+    lifebardiv.classList.remove("hidden");
     document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
     document.getElementById("lifepoints").innerHTML=lifepts;
     document.getElementById("potions").innerHTML=potions;
