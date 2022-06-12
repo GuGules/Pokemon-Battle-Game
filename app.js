@@ -177,8 +177,8 @@ function jeu(ennemy,attaque_max,lifepts,ennemy_pv,ennemy_attack_max){
     document.getElementById("potions").innerHTML=potions;
     degats.addEventListener("click",()=>{
         alert("*hit*")
-        attaque=randInt(1,(attaque_max/2))
-        ennemy_pv=ennemy_pv-attaque
+        attaque=randInt(1,(attaque_max/2));
+        ennemy_pv=ennemy_pv-attaque;
         if(ennemy_pv>15){
             document.getElementById("ennemy_pv").innerHTML=ennemy_pv;
         }else if (0<ennemy_pv && ennemy_pv<15){
